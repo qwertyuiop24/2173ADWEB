@@ -1,0 +1,65 @@
+<div class="container">
+  <p>Today's Date (Default): {{presentDate}}</p>
+  <p>Short Date: {{presentDate | date: 'shortDate' | uppercase}}</p>
+  <p>Medium Date: {{presentDate | date: 'mediumDate'}}</p>
+  <p>Long Date: {{presentDate | date: 'longDate'}}</p>
+</div>
+
+<div class="container">
+<p>This is a short date: {{presentDate | date: 'shortDate' }} <br/> <br>This indicates the hours and minutes:- {{presentDate | date: 'h:mm'}}</p>
+  <p>This line shows the full date: {{presentDate | date: 'fullDate' }} <br/></p>
+  <p>This will show a formatted date:- {{presentDate | date: 'M/dd/yyyy'}} <br/></p>
+</div>
+
+<div class="container">
+  <h3 class="animate-character">Chained Pipes</h3>
+    Date with uppercase: {{presentDate | date: 'fullDate' | uppercase}} <br/>
+    <br>Date with lowercase: {{presentDate | date: 'medium' | lowercase}} <br/>
+    </div>
+
+    <div class="container"> 
+    <h3>AsyncPipe</h3>
+      Seconds changing in Time: {{ time$ | async | date:'mediumTime' }} 
+   </div>
+
+   <div class="container">
+   <h3> Currency Pipe</h3>
+  <p>{{ price | currency:'':true}}</p>
+  <p>{{ price | currency: 'INR' }}</p>
+  <p>{{price | currency: 'PHP'}}</p>
+  </div>
+
+  <div class="container">
+    <h3>Decimal Pipe</h3>
+      <p> {{decimalNum1 | number}} </p>
+      <p> {{decimalNum2 | number}} </p>
+      <p> {{decimalNum3 | number}} </p>
+      </div>
+
+  <div class="container">
+   <h3>Json Pipe</h3>
+    <p>Without JSON pipe:</p>
+    <pre>{{ object }}</pre>
+    <p>With JSON pipe:</p>
+    <pre>{{ object | json }}</pre>
+  </div>
+
+  <div class="container">
+  <h3>Percent Pipe</h3>
+    <!--output '26%'-->
+    <p>A: {{ a | percent }}</p>
+
+    <!--output '0,134.950%'-->
+    <p>B: {{ b | percent: '4.3-5' }}</p>
+
+    <!--output '0,134.950%'-->
+    <p>C: {{ c | percent}}</p>
+  </div>
+
+  <div class="container">
+  <h3>Slice Pipe</h3>
+    <p>Start index:- {{Fruits | slice: 2}}</p>
+    <p>Start and end index: {{Fruits | slice: 1:4}}</p>
+    <p>Negative index:- {{Fruits | slice:-2}}</p>
+    <p>Negative start and end index: {{Fruits | slice:-4:-2}}</p>
+    </div>
