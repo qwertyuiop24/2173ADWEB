@@ -1,0 +1,106 @@
+.example-container mat-form-field + mat-form-field {
+    margin-left: 8px;
+  }
+  
+// Define primary color
+$primary-color: #007bff;
+$primary-dark-color: #0056b3;
+$hover-bg-color: #0056b3;
+$focus-ring-color: #80bdff;
+$text-color: #fff;
+
+.row {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+form {
+  max-width: 20rem;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  
+  .mb-2 {
+    margin-bottom: 0.5rem;
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    input.form-control,
+    .mat-chip-listbox {
+      width: 100%;
+      padding: 0.375rem 0.75rem;
+      border: 1px solid #ced4da;
+      border-radius: 0.25rem;
+      outline: none;
+      transition: border-color 0.3s ease-in-out, box-shadow 0.2s ease-in-out;
+
+      &:focus {
+        border-color: $primary-color;
+        box-shadow: 0 0 0 0.2rem rgba($primary-color, .25);
+      }
+    }
+
+    .mat-chip-listbox {
+      display: flex;
+      gap: 0.5rem;
+      padding: 0;
+      list-style: none;
+      background-color: transparent;
+
+      .mat-chip-option {
+        cursor: pointer;
+        user-select: none;
+        padding: 0.375rem 0.75rem;
+        border: none;
+        background-color: #e9ecef;
+        border-radius: 0.25rem;
+
+        &:focus,
+        &:hover {
+          background-color: $focus-ring-color;
+        }
+      }
+    }
+  }
+
+  button {
+    background-color: $primary-color;
+    color: $text-color;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+      background-color: $hover-bg-color;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 0.2rem rgba($primary-color, .5);
+    }
+  }
+}
+
+// Adding simple animation
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Apply animation to form elements
+form {
+  animation: fadeIn 0.5s ease-out;
+}
